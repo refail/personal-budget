@@ -70,13 +70,14 @@ function MonthRow({ monthKey, label, isCurrent, budget, onSave, onDelete }) {
           <span className="text-sm text-gray-400">$</span>
           <input
             type="number"
+            inputMode="decimal"
             step="0.01"
             min="0"
             value={value}
             onChange={(e) => setValue(e.target.value)}
             onBlur={handleBlur}
             onKeyDown={(e) => e.key === "Enter" && handleBlur()}
-            className="w-20 text-right text-base font-medium border border-gray-200 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            className="w-24 text-right text-base font-medium border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             autoFocus
           />
         </div>
@@ -121,12 +122,22 @@ export default function Settings({ monthlyBudgets, onBudgetChange, onResetCurren
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-lg mx-auto px-4 py-8">
-        <div className="flex items-center gap-3 mb-8">
+      <div
+        className="max-w-lg mx-auto px-4 pb-10 sm:px-6"
+        style={{
+          paddingTop: "max(1.5rem, env(safe-area-inset-top))",
+          paddingBottom: "max(2.5rem, env(safe-area-inset-bottom))",
+        }}
+      >
+        <div className="flex items-center gap-2 mb-6">
           {hasAnyBudget && (
-            <Link to="/" className="text-gray-400 hover:text-gray-600 transition-colors">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 4l-8 8 8 8" />
+            <Link
+              to="/"
+              aria-label="Back to dashboard"
+              className="-ml-2 p-2 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M15 6l-6 6 6 6" />
               </svg>
             </Link>
           )}
