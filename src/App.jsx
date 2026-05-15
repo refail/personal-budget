@@ -10,7 +10,7 @@ import Settings from "./components/Settings";
 let nextId = Date.now();
 
 function Dashboard({ expenses, monthlyBudget, onAdd, onDelete, totalSpent }) {
-  const [modalOpen, setModalOpen] = useState(expenses.length === 0 && monthlyBudget > 0);
+  const [modalOpen, setModalOpen] = useState(monthlyBudget > 0);
 
   return (
     <div className="min-h-screen bg-gray-50">

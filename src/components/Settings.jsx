@@ -76,7 +76,7 @@ function MonthRow({ monthKey, label, isCurrent, budget, onSave, onDelete }) {
             onChange={(e) => setValue(e.target.value)}
             onBlur={handleBlur}
             onKeyDown={(e) => e.key === "Enter" && handleBlur()}
-            className="w-20 text-right text-sm font-medium border border-gray-200 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            className="w-20 text-right text-base font-medium border border-gray-200 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             autoFocus
           />
         </div>

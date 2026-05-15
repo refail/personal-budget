@@ -41,13 +41,13 @@ export default function AddExpenseModal({ open, onClose, onAdd }) {
   const cat = getCategory(category);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div
         className="absolute inset-0 bg-black/40 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      <div className="relative w-full sm:max-w-sm bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl p-6 animate-[slideUp_0.2s_ease-out]">
+      <div className="relative w-full sm:max-w-sm bg-white rounded-2xl shadow-2xl p-6 animate-[slideUp_0.2s_ease-out]">
         {step === "amount" ? (
           <>
             <h2 className="text-lg font-semibold text-gray-900 mb-4">New Expense</h2>
